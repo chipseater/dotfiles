@@ -6,9 +6,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec_always --no-startup-id dunst
+# Launches your favorite programs on startup, delete those lines if you don't want them to launch automatically
 exec --no-startup-id firefox
-exec --no-startup-id spotify
 exec --no-startup-id discord
+# displays a help conky, remove/comment out this line to remove it
+exec --no-startup-id ~/.config/conky/conky.conf
 
 exec --no-startup-id feh --bg-scale ~/.config/wallpapers/boat-painting.jpg
 exec --no-startup-id polybar
@@ -22,9 +24,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym F10 exec --no-startup-id playerctl play-pause
-bindsym F11 exec --no-startup-id playerctl previous
-bindsym F12 exec --no-startup-id playerctl next
+bindsym $mod+F10 exec --no-startup-id playerctl play-pause
+bindsym $mod+F11 exec --no-startup-id playerctl previous
+bindsym $mod+F12 exec --no-startup-id playerctl next
 
 # no borders
 # default_border pixel 0 
@@ -136,7 +138,6 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 for_window [title="Mozilla Firefox"] move to workspace $ws2
-for_window [title="Spotify"] move to workspace $ws4
 for_window [title=" - Discord"] move to workspace $ws5
 for_window [title="Discord Updater"] move to workspace $ws5
 

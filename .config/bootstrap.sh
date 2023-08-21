@@ -42,7 +42,7 @@ sudo pacman -R xdg-desktop-portal-gnome --noconfirm
 nvim -c "so ~/.config/nvim/init.vim | PlugInstall | UpdateRemotePlugins | q! | q!"
 
 sudo systemctl enable lightdm
-sudo systemctl start lightdm
+sudo systemctl start lightdm &
 
 # Remove the file to never prompt for sudo password
 sudo rm /etc/sudoers.d/dont-prompt-$(whoami)-for-sudo-password
